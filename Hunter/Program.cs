@@ -11,20 +11,17 @@ namespace Hunter
    
         static void Main(string[] args)
         {
-            
-            Random random = new Random();
- 
+            int x, y;
+            Rabbit myrabbit = new Rabbit();
+            Hunter myhunter = new Hunter();
+            Console.SetWindowSize(100, 51);
             while (true)
             {
                 Console.Clear();
-                int x = random.Next(1, 50);
-                int y = random.Next(1, 50);
-                Rabbit myrabbit = new Rabbit(x, y,'@');
-                Hunter myhunter = new Hunter();
                 myrabbit.RabbitMoved += myhunter.Scream;
-                myrabbit.Draw();
-                //HunterHendler evt = myhunter.Scream;
-                //evt.Invoke(x,y);
+                myrabbit.Draw(out x, out y);
+                Console.SetCursorPosition(x,y);
+                Console.Write('@');
                 System.Threading.Thread.Sleep(1000); 
             }
             

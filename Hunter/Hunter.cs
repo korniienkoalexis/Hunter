@@ -12,7 +12,6 @@ namespace Hunter
         {
             Console.SetCursorPosition(0, 0);
             Console.Write("The rabbit position is x={0} y={1}", x, y);
-
         }
     }
 }
